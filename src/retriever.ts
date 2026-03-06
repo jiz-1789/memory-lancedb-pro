@@ -5,6 +5,11 @@
 
 import type { MemoryEntry, MemoryStore, MemorySearchResult } from "./store.js";
 import type { Embedder } from "./embedder.js";
+import {
+  AccessTracker,
+  computeEffectiveHalfLife,
+  parseAccessMetadata,
+} from "./access-tracker.js";
 import { filterNoise } from "./noise-filter.js";
 import type { DecayEngine } from "./decay-engine.js";
 import { toLifecycleMemory } from "./smart-metadata.js";

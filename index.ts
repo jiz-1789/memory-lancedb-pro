@@ -34,12 +34,6 @@ import {
   toLifecycleMemory,
 } from "./src/smart-metadata.js";
 
-// Import smart extraction & lifecycle components
-import { SmartExtractor } from "./src/smart-extractor.js";
-import { createLlmClient } from "./src/llm-client.js";
-import { createDecayEngine, DEFAULT_DECAY_CONFIG } from "./src/decay-engine.js";
-import { createTierManager, DEFAULT_TIER_CONFIG } from "./src/tier-manager.js";
-
 // ============================================================================
 // Configuration & Types
 // ============================================================================
@@ -1199,7 +1193,6 @@ function parsePluginConfig(value: unknown): PluginConfig {
 
   if (!apiKey || (Array.isArray(apiKey) && apiKey.length === 0)) {
     throw new Error("embedding.apiKey is required (set directly or via OPENAI_API_KEY env var)");
-  }
   }
 
   return {
